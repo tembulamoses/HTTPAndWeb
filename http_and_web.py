@@ -33,4 +33,15 @@ def get_location_address():
 	response_status= read_json_data['status']
 	# print (read_json_data)
 	
-	
+	if response_status != 'OK':
+		print('Location details Not found. Something could have gone wrong\n')
+		print('You might have entered an unrecognised location')
+		return get_location_address()
+	else:
+		try:
+			address = 'Address for ' + user_input +'\n'+ read_json_data['results'][0]['formatted_address']
+		except(IndexError, socket.gaierror):
+			print("That's not a proper location, Please enter simple location")
+			return get_location_address()
+		else:
+			print(address)
