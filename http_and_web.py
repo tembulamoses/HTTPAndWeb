@@ -31,7 +31,6 @@ def get_location_address():
 
 	print()
 	response_status= read_json_data['status']
-	# print (read_json_data)
 	
 	if response_status != 'OK':
 		print('Location details Not found. Something could have gone wrong\n')
