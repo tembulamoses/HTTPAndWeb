@@ -45,3 +45,26 @@ def get_location_address():
 			return get_location_address()
 		else:
 			print(address)
+
+def main():
+	
+	print ('Select either 1 or 2')
+	print ('1. To enter address\n2. To quit program')
+
+	try:
+		menu_select = int(input('select number: '))
+
+		if menu_select==1:
+			get_location_address()
+		elif menu_select==2:
+				print('quitting now')
+		else:
+			print ('Only 1 or 2 accepted')
+			return main()
+
+	except(ValueError):
+		print("You didn't enter 1 or 2")
+		return main()	
+
+if __name__ == '__main__':
+    main()
